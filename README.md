@@ -4,4 +4,5 @@ Calculater to predict your decathlon score - https://decathlon-score.appspot.com
 Website in estonian which predicts your decathlon score based on highjump and 400m run results.
 
 To do:
+
 1)Translate to english.
