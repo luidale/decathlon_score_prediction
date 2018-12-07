@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ee" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>10 võistluse punkti ennustaja - main</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    <h2> Ennustaja </h2>
+    <h3> Sisesta kõrgushüppe ja 400m jooksu tulemus </h3>
+    <p> Arvutab sulle ennustava punktisumma </p>
+  <form>
+    <p> Kõrgushüpe <input type="number" id="k6rgus" value="" step="0.01"> (meetrid, nt 1.23)</p>
+	<p> 400m jooks <input type="number" id="jooks400m" value="" step="0.01"> (sekundid, nt 55.44) </p>
+    <input type="button" value="Submit" onclick="deca_score()" />
+    <div id="alert" style="color: red"></div>
+  </form>
+        <script>
+            function deca_score() {
+  var variable1 = document.getElementById('k6rgus').value;
+  var variable2 = document.getElementById('jooks400m').value;
+  //add test for variable type
+  document.getElementById('alert').innerHTML = 'Ennustatav tulemus on ' + 
+		Math.round(753.139 + 2.396*variable2 + 4.582*variable1) + "(+- 200) punkti.";
+}
+        </script>
+	{% endblock %}
+  </body>
+</html>

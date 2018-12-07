@@ -1,0 +1,40 @@
+Function nelisada(d As Object) As Integer
+    Dim tulemus As Double
+    Dim Vaart As String
+    Vaart = d.Value
+    If InStr(1, Vaart, "(k)") > 0 Then
+        tulemus = Val(Vaart) + 0.14
+    Else
+        tulemus = Val(Vaart)
+    End If
+    
+    If (tulemus = 0) Or (tulemus > 82) Then
+        pts = 0
+    Else
+        pts = jooks1(1.53775, 82, 1.81, tulemus)
+    End If
+    
+    nelisada = pts
+	
+Function korgus(d As Object) As Integer
+    Dim tulemus As Double
+    tulemus = d.Value
+    If tulemus > 0.75 Then
+        pts = hype(0.8465, 0.75, 1.42, tulemus)
+    Else
+        pts = 0
+    End If
+    korgus = pts
+End Function
+
+Function jooks1(a As Double, b As Double, c As Double, tulem As Double) As Integer
+    Punkte = Int(a * (b - tulem) ^ c)
+    
+    jooks1 = Punkte
+                
+End Function
+
+Function hype(a As Double, b As Double, c As Double, tulem As Double) As Integer
+    Punkte = Int(a * ((100 * (tulem - b)) ^ c))
+    hype = Punkte
+End Function
