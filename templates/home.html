@@ -12,19 +12,46 @@
     <p> Arvutab sulle ennustava punktisumma </p>
   <form>
     <p> Kõrgushüpe <input type="number" id="k6rgus" value="" step="0.01"> (meetrid, nt 1.23)</p>
-	<p> 400m jooks <input type="number" id="jooks400m" value="" step="0.01"> (sekundid, nt 55.44) </p>
-    <input type="button" value="Submit" onclick="deca_score()" />
+	<p> 400m jooks <input type="text" id="jooks400m" value="" step="0.01"> (sekundid, nt 55.44, käsiaja puhul lisa (k)) </p>
+    <input type="button" value="Ennusta" onclick="deca_score()" />
     <div id="alert" style="color: red"></div>
+	<script>
+		function deca_score() {
+			var variable1 = k6rgus();
+			var variable2 = nelisada();
+		  //add test for variable type
+			document.getElementById('alert').innerHTML =	 'Ennustatav tulemus on '
+				+ Math.round(753.139 + 2.396 * variable2 + 4.582 * variable1) + "(+- 200) punkti.";
+				}
+		function k6rgus() {
+			var tulemus = document.getElementById('k6rgus').value;
+			if (tulemus > 0.75) {
+				return hype(0.8465, 0.75, 1.42, tulemus);
+			} else {
+				return 0;
+			}
+		}
+		function nelisada() {
+			var tulemus = document.getElementById('jooks400m').value;
+			if (tulemus.search("(k)") != -1) {
+				tulemus = Number(tulemus.split("(k)")[0]) + 0.14;
+			} else {
+				tulemus = Number(tulemus);
+			}
+			if (tulemus == 0 || tulemus > 82) {
+				return 0;
+			} else {
+				return jooks1(1.53775, 82, 1.81, tulemus);
+			}
+		}
+		function hype(a, b, c, tulem) {
+			return (a * (Math.pow((100 * (tulem - b)), c)));
+		}
+		function jooks1(a,b,c,tulem) {
+			return (a * Math.pow((b - tulem), c));
+		}
+	</script>
   </form>
-        <script>
-            function deca_score() {
-  var variable1 = document.getElementById('k6rgus').value;
-  var variable2 = document.getElementById('jooks400m').value;
-  //add test for variable type
-  document.getElementById('alert').innerHTML = 'Ennustatav tulemus on ' + 
-		Math.round(753.139 + 2.396*variable2 + 4.582*variable1) + "(+- 200) punkti.";
-}
-        </script>
 	{% endblock %}
   </body>
 </html>
