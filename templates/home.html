@@ -16,7 +16,38 @@
     <input type="button" value="Ennusta" onclick="deca_score()" />
     <div id="alert" style="color: red"></div>
 	<script type="text/javascript" src="{{ url_for('static',filename='functions.js') }}"></script>
+	<img id="img2" src=""/>
   </form>
+  
+
+  <script>
+  // Add immage in smaller resolution
+
+  // Selects random image
+  var image_array =  [
+  "https://lh3.googleusercontent.com/5R4RdYflo_w9Yl5ZLLsbUx3mB6zJcRx8MuzSHnkCQd9mG9P7ZFojIhp-YwALq_M-KJVylTN4DcLR-t7K8lO1FDB4PGEezQScce1fbZd5RgtznABQOZ6tVHiNUpxzvPHoO9MfrQdq2nmO-VAeLxM2wU4LaQzx8FC04RvbMyQ8NvB4zUa0bMvYNjRcigLS7hH5GaGMsvsHYNhEeH4flS23IGWExr9CKKLd-iRL8GZNsqOZjvzLwp-fpiSoCLCvYBJgGkpqAsC3oSEfHC7h-a0AIdAL6aUSQ8MXNuzDnDtlgAJUpN70Om-ZQdditYepJC9oy-5nS4EceJQFOQ9BmFWjajGwQh46YGJAGGuJlWUAomD14nJf2IL2DCuXDzAB9mcjTQTxn4IYRr5Vtq-nan9Eo3kxd2pgNdapezSXFvE_12eL8Efi31EUtPcUoRhD8oqD3cwxtdLuGa8xOn-kYehNAgDnNsKLZ2P2PXGzYYyi_iJKDL0ZhuJmcFLpzLYcHIj5CJyfx4cye7CkmePgzVqYPKkEVix-SYIGDnkhezsXvL3tcVGfMVv90QXUZYa7QNX8eTylyYo30M9zzaBAcBw4-6NrpQlx-SZsqifuUjRT_w_y4F-IuweOAoVZvAcz--WId0l96YKCEOQiAYmgNV7nPNHOMqdTqZ8hlWcjhSfgDOYDxOaHExDeEBqOk4eUmueIZ47ZB8BFHUkAbsKbag",
+  "https://lh3.googleusercontent.com/zxKq_aMzJbxOGfNixtgEAXGj4i508EOHvovMuWsABTA73MegFxW4limqoZCrkyFAYcI_L9ueO4l1IRA8Hc8rg5JHQd2krp1gVeYcdJ-uPtX37j7WseOA19WVB1CwIj7aFQRFtmSIllPELPuS1qP0tu9_IGrdZNa6NKEQ2F8IU_UNj9vqN9TUf4MGm9_GIRX1MopXpqth-mQ-VsJqG0V3s9c1gBMUVttO88H0eDxy_r-AC-Kopz-YAchtXQ75l2UTDMzb-VoB6BZBCYTD7EyVrgWKKDzaBYO1meIdZi1uBIRjYS9DYGlJ6ncr8VMVzebf90s0pBMe9BQNYranBzmTbX0brbx9DMVTxUsI5yiT2Pom5EAZN5L_INRTfSObRfTTIneDaitGMN90IkdgDghrulT7uHvlCkTWYnnCYSudsZ6HRfVmu4KIskSEPb-YO0xqyQ1S4DbeV8QjXAdPcaEe7Jx7lR3SOZnm5Z-9PPdkNtSQh8A6oMp3EOOR7DKeSoe_DCrMjOUUKyXaK4TW1E34IjmdD8nCMX5A3RKALjGp1u5U8XVCQ95G2DVefKkXukuK-TbZI0BoXYty6yPRant94SV2clCfgxWdRCq1bZHrABrUtE_1w48Fi_qAx7zS7fKaRFtvebJaHWbCnmDGWQ4oVcrDgTtjyGSZ_Cei3mZ52yKo6vEiPxanr6n0z-SzzZYR_nHh2-fb_0YTleQ-aw"
+  ];
+  var rand = image_array[Math.floor(Math.random() * image_array.length)];
+  var x = -1
+
+          function displayNextImage() {
+              x = (x === image_array.length - 1) ? 0 : x + 1;
+              document.getElementById("img2").src = image_array[x];
+          }
+
+          function displayPreviousImage() {
+              x = (x <= 0) ? image_array.length - 1 : x - 1;
+              document.getElementById("img2").src = image_array[x];
+          }
+
+          function startTimer() {
+              setInterval(displayNextImage, 2000);
+          }
+  
+  startTimer();	
+  </script>
+
 	{% endblock %}
   </body>
 </html>
