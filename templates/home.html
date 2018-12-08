@@ -36,14 +36,14 @@
   ];
   //var rand = image_array[Math.floor(Math.random() * image_array.length)];
   //document.getElementById("cf").getElementsByClassName("bottom")[0].src = image_array[rand];
-  //var rand = image_array[Math.floor(Math.random() * image_array.length)];
+  var rand = image_array[Math.floor(Math.random() * image_array.length)];
   //document.getElementById("cf").getElementsByClassName("top")[0].src = image_array[rand];
-x = -1;
+var x = -1;
 y = 0;
           function displayNextImage() {
               rand = image_array[Math.floor(Math.random() * image_array.length)];
 			  x = (x <= 0) ? image_array.length - 1 : x + 1;
-              document.getElementById("cf").getElementsByClassName("bottom")[0].src = image_array[x];
+              document.getElementById("cf").getElementsByClassName("bottom").src = image_array[3];
 			  //y = (y <= 0) ? image_array.length - 1 : y - 1;
 			  //document.getElementById("cf").getElementsByClassName("top")[0].src = image_array[y];
           }
