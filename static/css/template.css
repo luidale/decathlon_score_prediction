@@ -7,6 +7,13 @@ h1 { font-family: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans,
   color: black;
 }
 
+#calc {
+  float: left;
+  width: 40%;
+  height: 300px; /* only for demonstration, should be removed */
+  padding: 20px;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -33,10 +40,12 @@ li a:hover {
 }
 
 #cf {
+  float:right;
   position:relative;
-  height:281px;
+  /*height:281px;
   width:450px;
-  margin:0 auto;
+  margin:0 auto;*/
+  width: 50%;
 }
 
 #cf img {
@@ -70,6 +79,13 @@ li a:hover {
 animation-name: cfFadeInOut;
 animation-timing-function: ease-in-out;
 animation-iteration-count: infinite;
-animation-duration: 3s;
+animation-duration: 10s;
 animation-direction: alternate;
+}
+/* window size responsive effect*/
+@media (max-width: 600px) {
+  #calc, #cf {
+    width: 100%;
+    height: auto;
+  }
 }
