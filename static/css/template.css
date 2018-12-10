@@ -92,8 +92,3 @@ animation-direction: alternate;
     height: auto;
   }
 }
-#cf img {
-
-    /* you need to match the shadow color to your background or image border for the desired effect*/
-    box-shadow: 10 10 100px 100px white inset;
-}
