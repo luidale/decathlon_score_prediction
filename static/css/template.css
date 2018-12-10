@@ -38,13 +38,16 @@ li a {
 li a:hover {
   background-color: #79D636;
 }
-
 #cf {
   float:right;
   position:relative;
-  /*height:281px;
-  width:450px;
-  margin:0 auto;*/
+  width: 50%;
+  opacity:1;
+}
+/*
+#cf {
+  float:right;
+  position:relative;
   width: 50%;
 }
 
@@ -79,7 +82,7 @@ li a:hover {
 animation-name: cfFadeInOut;
 animation-timing-function: ease-in-out;
 animation-iteration-count: infinite;
-animation-duration: 10s;
+animation-duration: 1s;
 animation-direction: alternate;
 }
 /* window size responsive effect*/
@@ -88,4 +91,9 @@ animation-direction: alternate;
     width: 100%;
     height: auto;
   }
+}
+#cf img {
+
+    /* you need to match the shadow color to your background or image border for the desired effect*/
+    box-shadow: 10 10 100px 100px white inset;
 }

@@ -3,8 +3,8 @@ function deca_score() {
 	var variable2 = run400m();
 	if (variable1 != false & variable2 != false) { 
   //add test for variable type
-		document.getElementById('alert').innerHTML =	 'Ennustatav tulemus on '
-			+ Math.round(753.139 + 2.396 * variable2 + 4.582 * variable1) + "(+- 200) punkti.";
+		document.getElementById('alert').innerHTML =	 'Prognoositav kümnevõistluse kogusumma on '
+			+ Math.round(753.139 + 2.396 * variable2 + 4.582 * variable1) + " (+- 200) punkti.";
 			}
 	}
 function highjump() {
